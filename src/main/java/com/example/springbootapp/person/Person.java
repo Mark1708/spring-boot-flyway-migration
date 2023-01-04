@@ -19,4 +19,6 @@ public class Person {
 
     private String role;
 
+    private LocalDate birthday;
+
 }
