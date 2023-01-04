@@ -1,10 +1,10 @@
 package com.example.springbootapp.person;
 
+import com.example.springbootapp.role.Role;
 import lombok.Data;
 
 import javax.persistence.*;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 
 @Data
 @Entity
@@ -17,7 +17,9 @@ public class Person {
 
     private String name;
 
-    private String role;
+    @ManyToOne
+    @JoinColumn(name = "role_id", referencedColumnName = "id")
+    private Role role;
 
     private LocalDate birthday;
 
